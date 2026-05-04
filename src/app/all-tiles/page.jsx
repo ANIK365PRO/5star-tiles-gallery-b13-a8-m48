@@ -10,7 +10,7 @@ const tilesFetch = async() =>{
 }
 const AllTilesPage = async() => {
    const data =  await tilesFetch()
-       console.log(data)
+    //    console.log(data)
     
        return (
            <div className='my-16 md:my-20 lg:my-24 px-4'>
