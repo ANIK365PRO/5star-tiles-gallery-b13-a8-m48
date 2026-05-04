@@ -18,13 +18,13 @@ const Navbar = () => {
           <li>
             <Link href={"/all-tiles"}>All Tiles</Link>
           </li>
-          {/* <li>
+          <li>
             <Link href={"/profile"}>Profile</Link>
-          </li> */}
+          </li>
         </ul>
     <div className="space-x-2">
-       <Link href={'/login'}> <Button variant="tertiary">log in</Button></Link>
-        <Button variant="tertiary">log Out</Button>
+       <Link href={'/login'}> <Button variant="tertiary" className="bg-green-600 hover:bg-green-500 text-white ">Login</Button></Link>
+        <Button variant="tertiary" className="bg-pink-400 text-white hover:bg-pink-500">Logout</Button>
     </div>
   </header>
 </nav>

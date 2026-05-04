@@ -18,7 +18,7 @@ const Banner = () => {
 
           <div className="flex gap-4">
             <Link href="/all-tiles">
-              <Button className="bg-linear-to-r from-pink-500 via-purple-500 bg-red-500">
+              <Button className="bg-green-600 hover:bg-green-500 font-bold px-8">
                Browse Now
               </Button>
             </Link>

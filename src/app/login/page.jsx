@@ -8,7 +8,7 @@ const LoginPage = () => {
 
     const onSubmit = async(e) => {
 
-      e.preventDefault()
+        e.preventDefault()
 
         const email = e.target.email.value;
         const password = e.target.password.value;
@@ -71,11 +71,11 @@ const LoginPage = () => {
                     </TextField>
 
                     <div className="flex gap-2">
-                      <Button type="submit" className="px-6  bg-purple-600 text-white">
+                      <Button type="submit" className=" bg-green-600 hover:bg-green-500 font-bold px-8 text-white">
                         <Check />
                         Login
                       </Button>
-                      <Button type="reset" variant="secondary" className="px-6 text-purple-600">
+                      <Button type="reset" variant="secondary" className="text-green-600 hover:text-green-500 font-bold px-8">
                         Reset
                       </Button>
                     </div>

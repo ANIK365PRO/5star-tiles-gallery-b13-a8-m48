@@ -1,4 +1,5 @@
 "use client";
+import { authClient } from "@/lib/auth-client";
 import {Check} from "@gravity-ui/icons";
 import {Button, Description, FieldError, Fieldset, Form, Input, Label, TextField} from "@heroui/react";
 import Link from "next/link";
@@ -8,13 +9,23 @@ const RegisterPage = () => {
 
     const onSubmit = async(e) => {
 
-      e.preventDefault()
+        e.preventDefault()
 
+        const name = e.target.name.value;
+        const image = e.target.photo.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email, password)
+        console.log(name, image, email, password)
 
-       
+        const { data, error } = await authClient.signUp.email({
+            name: name, // required
+            image: image, // required
+            password: password, // required
+            email:email,
+            callbackURL: "/",
+        });
+
+        console.log(data, error, 'data-error')
     };
 
 
@@ -96,11 +107,11 @@ const RegisterPage = () => {
                     </TextField>
 
                     <div className="flex gap-2">
-                      <Button type="submit" className="px-6 bg-purple-600 text-white">
+                      <Button type="submit" className=" bg-green-600 hover:bg-green-500 font-bold px-8 text-white">
                         <Check />
                         Register
                       </Button>
-                      <Button type="reset" variant="secondary" className="px-6 text-purple-600">
+                      <Button type="reset" variant="secondary" className="text-green-600 hover:text-green-500  font-bold px-8">
                         Reset
                       </Button>
                     </div>

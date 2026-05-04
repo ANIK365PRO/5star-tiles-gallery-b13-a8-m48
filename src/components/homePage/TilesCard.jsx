@@ -10,7 +10,7 @@ import { IoIosStar } from 'react-icons/io';
 const TilesCard = ({tiles}) => {
     return (
         <div>
-             <Card className="border rounded-xl">
+             <Card className="border rounded-xl card bg-white/50">
             <div className="relative w-full aspect-square">
             <Image
                 src={tiles.image}
@@ -42,7 +42,7 @@ const TilesCard = ({tiles}) => {
             </div>
            </div>
 
-     <Link href={`/all-tiles/${tiles.id}`}>      <Button variant="outline" className={'w-full '}>View Details</Button></Link>
+     <Link href={`/all-tiles/${tiles.id}`}>      <Button variant="outline" className={'w-full bg-green-600 hover:bg-green-500 text-white font-bold'}>View Details</Button></Link>
             
         </Card>
         </div>

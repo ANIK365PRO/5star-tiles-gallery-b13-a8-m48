@@ -66,7 +66,7 @@ const TileDetails = async({params}) => {
                     <ul className='flex items-center justify-around'>
                         <li> {currency} : $ {price}</li>
                          
-                        <Button variant="outline">Buy now</Button>
+                        <Button variant="outline" className="bg-green-600 hover:bg-green-500 text-white font-bold px-8">Buy now</Button>
                     </ul>
                 </div>
 
@@ -88,7 +88,7 @@ const TileDetails = async({params}) => {
                     {/* <Chip size="sm" className="absolute right-2 top-2 bg-amber-500 text-white">{tiles.category}</Chip> */}
             </div>
 
-           <Link href={'/all-tiles'}> <Button variant="outline" className="text-center flex mx-auto">back to All Tiles</Button></Link>
+           <Link href={'/all-tiles'}> <Button variant="outline" className="text-center flex mx-auto bg-green-600 hover:bg-green-500 text-white font-bold px-8">back to All Tiles</Button></Link>
 
         </div>
     );
