@@ -22,8 +22,9 @@ const Navbar = () => {
             <Link href={"/profile"}>Profile</Link>
           </li> */}
         </ul>
-    <div>
-        <Button>login</Button>
+    <div className="space-x-2">
+       <Link href={'/login'}> <Button variant="tertiary">log in</Button></Link>
+        <Button variant="tertiary">log Out</Button>
     </div>
   </header>
 </nav>

@@ -1,9 +1,14 @@
 import React from 'react';
 import TilesCard from './TilesCard';
 
+const tilesFetch = async() =>{
+    const res = await fetch('http://localhost:3000/data.json',{cache: 'no-store'})
+    const dataRes = await res.json()
+    return dataRes
+}
+
 const FeaturedTiles = async() => {
-    const res = await fetch('http://localhost:3000/data.json')
-    const data = await res.json()
+   const data =  await tilesFetch()
     console.log(data)
     return (
         <div>

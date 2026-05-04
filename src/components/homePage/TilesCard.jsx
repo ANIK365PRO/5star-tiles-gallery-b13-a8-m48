@@ -27,16 +27,16 @@ const TilesCard = ({tiles}) => {
 
            <div className="flex gap-5">
              <div className="flex items-center gap-2">
-                <p><FaHeart /></p>
-                {/* <p>{tiles.likes}</p> */}
+                
+                <p>{tiles.inStock}</p>
             </div>
 
             <Separator orientation="vertical"/>
 
 
                <div className="flex items-center gap-2">
-                <p><BiDownload /></p>
-                {/* <p>{tiles.downloads}</p> */}
+               
+                <p>{tiles.rating}</p>
             </div>
            </div>
 

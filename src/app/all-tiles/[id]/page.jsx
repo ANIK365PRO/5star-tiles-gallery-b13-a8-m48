@@ -2,8 +2,10 @@ import React from 'react';
 
 const TileDetails = () => {
     return (
-        <div>
+        <div className='h-[40vh] bg-amber-100'>
             tiles details
+
+
         </div>
     );
 };
