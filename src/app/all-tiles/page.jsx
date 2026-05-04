@@ -4,7 +4,7 @@ import { Button } from "@heroui/react";
 
 
 const tilesFetch = async() =>{
-    const res = await fetch('http://localhost:5000/Tiles',{cache: 'no-store'})
+    const res = await fetch('https://5star-tiles-gallery-b13-a8-m48.vercel.app/data.json',{cache: 'no-store'})
     const dataRes = await res.json()
     return dataRes
 }

@@ -7,7 +7,7 @@ import { IoIosStar } from 'react-icons/io';
 
 const TileDetails = async({params}) => {
     const {id} = await params
-    const res = await fetch('http://localhost:5000/Tiles')
+    const res = await fetch('https://5star-tiles-gallery-b13-a8-m48.vercel.app/data.json')
     const dataRes = await res.json()
    
 
