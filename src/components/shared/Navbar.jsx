@@ -1,8 +1,10 @@
+// 'use client'
+import { authClient } from "@/lib/auth-client";
 import { Button } from "@heroui/react";
 import Link from "next/link";
 import { FaStarOfDavid } from "react-icons/fa";
 
-const Navbar = () => {
+const Navbar = async() => {
     return (
         <div className=" bg-background/70 border-b border-separator backdrop-blur-lg">
             <nav className="sticky top-0 z-40 w-full container mx-auto">
@@ -24,7 +26,7 @@ const Navbar = () => {
         </ul>
     <div className="space-x-2">
        <Link href={'/login'}> <Button variant="tertiary" className="bg-green-600 hover:bg-green-500 text-white ">Login</Button></Link>
-        <Button variant="tertiary" className="bg-pink-400 text-white hover:bg-pink-500">Logout</Button>
+        <Button variant="tertiary" className="bg-pink-400 text-white hover:bg-pink-500" >Logout</Button>
     </div>
   </header>
 </nav>

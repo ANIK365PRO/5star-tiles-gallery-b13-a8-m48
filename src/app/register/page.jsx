@@ -3,9 +3,12 @@ import { authClient } from "@/lib/auth-client";
 import {Check} from "@gravity-ui/icons";
 import {Button, Description, FieldError, Fieldset, Form, Input, Label, TextField} from "@heroui/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 // import { authClient } from "@/lib/auth-client";
 
 const RegisterPage = () => {
+  const router = useRouter()
 
     const onSubmit = async(e) => {
 
@@ -25,7 +28,19 @@ const RegisterPage = () => {
             callbackURL: "/",
         });
 
-        console.log(data, error, 'data-error')
+        {
+          data && toast.success('Welcome Register successful!') 
+        }
+        
+        {!error && router.push('/')}
+        
+        {
+          error && toast.warning(error.message + ' Or login your account.')
+        }
+
+
+         console.log(data, error
+, 'data-error')
     };
 
 

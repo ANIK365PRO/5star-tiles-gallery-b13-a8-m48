@@ -1,6 +1,7 @@
 import {Outfit } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
+import { ToastContainer } from "react-toastify";
 
 const OutfitFont = Outfit({
   subsets: ["latin"],
@@ -25,7 +26,7 @@ export default function RootLayout({ children }) {
         <main className="container mx-auto">
            {children}
         </main>
-
+           <ToastContainer />
        </body>
     </html>
   );
