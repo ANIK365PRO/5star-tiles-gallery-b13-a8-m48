@@ -1,6 +1,6 @@
 'use client'
 import { authClient} from "@/lib/auth-client";
-import { Avatar, Button } from "@heroui/react";
+import { Avatar, Button, Spinner } from "@heroui/react";
 import Link from "next/link";
 import { FaStarOfDavid } from "react-icons/fa";
 import { toast } from "react-toastify";
@@ -36,34 +36,44 @@ const Navbar = () =>{
               </ul>
 
 
-          { !user && <div className="space-x-2">
-
-
-                <Link href={'/login'}> <Button size="sm" variant="tertiary" className="bg-green-600 hover:bg-green-500 text-white ">Login</Button></Link>
-
-                <Link href={'/register'}> <Button size="sm" variant="tertiary" className="bg-green-600 hover:bg-green-500 text-white ">Register</Button></Link>
+          { isPending?
+              // loading when user is pending
+              <div className="flex flex-col items-center gap-2">
+                    <Spinner color="success" />
+                    
+              </div> :          
             
+                user ? 
+                    // show avatar or image and logout btn when user data found
+                    <div className="flex items-center space-x-2">
 
-          </div>}
+                      <Avatar size="sm">
+                          <Avatar.Image
+                              alt="Blue"
+                              src={user?.image}
+                              referrerPolicy="no-referrer"
+                            />
+                        <Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
+                      </Avatar>
+                        
+                      <Button size="sm" variant="tertiary" className="bg-pink-400 text-white hover:bg-pink-500" onClick={handleSignOut} >Signout</Button>
 
-          {user && <div className="flex items-center space-x-2">
+                    </div> :
 
-             <Avatar size="sm">
-                <Avatar.Image
-                    alt="Blue"
-                    src={user.image}
-                    referrerPolicy="no-referrer"
-                  />
-               <Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
-            </Avatar>
-              
-            <Button size="sm" variant="tertiary" className="bg-pink-400 text-white hover:bg-pink-500" onClick={handleSignOut} >Signout</Button>
+                     // show login & logout btn when user logout 
+                    <div className="space-x-2">
 
-          </div>
+
+                          <Link href={'/login'}> <Button size="sm" variant="tertiary" className="bg-green-600 hover:bg-green-500 text-white ">Login</Button></Link>
+
+                          <Link href={'/register'}> <Button size="sm" variant="tertiary" className="bg-green-600 hover:bg-green-500 text-white ">Register</Button></Link>
+                      
+
+                    </div>
 
         
         
-      }
+          }
   </header>
 </nav>
         </div>
