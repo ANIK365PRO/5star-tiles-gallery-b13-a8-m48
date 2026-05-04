@@ -17,17 +17,13 @@ const Banner = () => {
           </p>
 
           <div className="flex gap-4">
-            <Link href="#">
+            <Link href="/all-tiles">
               <Button className="bg-linear-to-r from-pink-500 via-purple-500 bg-red-500">
                Browse Now
               </Button>
             </Link>
 
-            <Link href="/pricing">
-              <Button variant="outline" className="text-white">
-                View Pricing
-              </Button>
-            </Link>
+          
           </div>
         </div>
       </div>

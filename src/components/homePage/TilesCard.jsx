@@ -4,6 +4,8 @@ import Link from 'next/link';
 import React from 'react';
 import { BiDownload } from 'react-icons/bi';
 import { FaHeart } from 'react-icons/fa';
+import { GiDominoTiles } from 'react-icons/gi';
+import { IoIosStar } from 'react-icons/io';
 
 const TilesCard = ({tiles}) => {
     return (
@@ -18,29 +20,29 @@ const TilesCard = ({tiles}) => {
                 className="object-cover rounded-xl w-full"
                 />
 
-                <Chip size="sm" className="absolute right-2 top-2">{tiles.category}</Chip>
+                <Chip size="sm" className="absolute right-2 top-2 bg-amber-500 text-white">{tiles.category}</Chip>
             </div>
 
-            <div>
-                <h2 className="font-medium">{tiles.title}</h2>
+            <div className='py-5'>
+                <h2 className="font-medium text-lg">{tiles.title}</h2>
             </div>
 
-           <div className="flex gap-5">
+           <div className="flex gap-5 pb-3">
              <div className="flex items-center gap-2">
-                
-                <p>{tiles.inStock}</p>
+                <GiDominoTiles />
+                <p>{tiles.color}</p>
             </div>
 
             <Separator orientation="vertical"/>
 
 
-               <div className="flex items-center gap-2">
-               
+               <div className="flex justify-center items-center gap-2">
+               <IoIosStar className='text-orange-500'/>
                 <p>{tiles.rating}</p>
             </div>
            </div>
 
-     <Link href={`/all-tiles/${tiles.id}`}>      <Button variant="outline" className={'w-full'}>Details</Button></Link>
+     <Link href={`/all-tiles/${tiles.id}`}>      <Button variant="outline" className={'w-full '}>View Details</Button></Link>
             
         </Card>
         </div>
