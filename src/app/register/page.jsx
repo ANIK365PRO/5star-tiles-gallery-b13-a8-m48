@@ -4,6 +4,7 @@ import {Check} from "@gravity-ui/icons";
 import {Button, Description, FieldError, Fieldset, Form, Input, Label, TextField} from "@heroui/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { BsGoogle } from "react-icons/bs";
 import { toast } from "react-toastify";
 // import { authClient } from "@/lib/auth-client";
 
@@ -25,14 +26,14 @@ const RegisterPage = () => {
             image: image, // required
             password: password, // required
             email:email,
-            callbackURL: "/",
+           
         });
 
         {
           data && toast.success('Welcome Register successful!') 
         }
         
-        {!error && router.push('/')}
+        {!error && router.push('/login')}
         
         {
           error && toast.warning(error.message + ' Or login your account.')
@@ -44,11 +45,17 @@ const RegisterPage = () => {
     };
 
 
-
+      const handleOnSubmitGoogle = async() =>{
+                const data = await authClient.signIn.social({
+                    provider: "google",
+                  });
+      
+              
+            }
     
     return (
-        <div className=" bg-zinc-100">
-              <div className="flex justify-center items-center py-20">
+        <div className=" bg-zinc-100 py-10">
+              <div className="flex flex-col justify-center items-center py-10">
 
                 <Form className="flex flex-col gap-4 card p-10 shadow-xl backdrop-blur-2xl bg-white/50 space-y-3" onSubmit={onSubmit}>
 
@@ -134,6 +141,14 @@ const RegisterPage = () => {
                     <small> You have an account? Please <Link href={'/login'}><span className="text-green-600">Login </span></Link></small>
                 </Form>
                 
+                <p className="text-center">Or</p>
+
+                  <div className="flex w-full max-w-sm flex-col gap-3">
+                        <Button onClick={handleOnSubmitGoogle} className="w-full" variant="tertiary">
+                          <BsGoogle className="text-green-500"/>
+                          Sign in with Google
+                        </Button>
+                  </div>
             </div>
         </div>
     );
