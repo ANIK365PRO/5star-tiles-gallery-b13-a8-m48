@@ -1,33 +1,69 @@
-// 'use client'
-import { authClient } from "@/lib/auth-client";
-import { Button } from "@heroui/react";
+'use client'
+import { authClient} from "@/lib/auth-client";
+import { Avatar, Button } from "@heroui/react";
 import Link from "next/link";
 import { FaStarOfDavid } from "react-icons/fa";
+import { toast } from "react-toastify";
 
-const Navbar = async() => {
+const Navbar = () =>{
+    const { data: session , isPending } = authClient.useSession()
+    const user = session?.user
+    console.log(user, isPending, 'nav session user')
+
+    const handleSignOut = async() =>{
+      await authClient.signOut();
+      toast.success('Logout successful !')
+    } 
+
     return (
         <div className=" bg-background/70 border-b border-separator backdrop-blur-lg">
             <nav className="sticky top-0 z-40 w-full container mx-auto">
   <header className="flex h-16 items-center justify-between px-6">
-    <div className="flex items-center gap-3">
-    
-      <p className="font-bold flex items-center gap-1">5 <FaStarOfDavid /> Tiles</p>
-    </div>
-    <ul className="flex items-center gap-5 text-sm">
-          <li>
-            <Link href={"/"}>Home</Link>
-          </li>
-          <li>
-            <Link href={"/all-tiles"}>All Tiles</Link>
-          </li>
-          <li>
-            <Link href={"/profile"}>Profile</Link>
-          </li>
-        </ul>
-    <div className="space-x-2">
-       <Link href={'/login'}> <Button variant="tertiary" className="bg-green-600 hover:bg-green-500 text-white ">Login</Button></Link>
-        <Button variant="tertiary" className="bg-pink-400 text-white hover:bg-pink-500" >Logout</Button>
-    </div>
+          <div className="flex items-center gap-3">
+          
+            <p className="font-bold flex items-center gap-1">5 <FaStarOfDavid /> Tiles</p>
+          </div>
+          <ul className="flex items-center gap-5 text-sm">
+                <li>
+                  <Link href={"/"}>Home</Link>
+                </li>
+                <li>
+                  <Link href={"/all-tiles"}>All Tiles</Link>
+                </li>
+                <li>
+                  <Link href={"/profile"}>Profile</Link>
+                </li>
+              </ul>
+
+
+          { !user && <div className="space-x-2">
+
+
+                <Link href={'/login'}> <Button size="sm" variant="tertiary" className="bg-green-600 hover:bg-green-500 text-white ">Login</Button></Link>
+
+                <Link href={'/register'}> <Button size="sm" variant="tertiary" className="bg-green-600 hover:bg-green-500 text-white ">Register</Button></Link>
+            
+
+          </div>}
+
+          {user && <div className="flex items-center space-x-2">
+
+             <Avatar size="sm">
+                <Avatar.Image
+                    alt="Blue"
+                    src={user.image}
+                    referrerPolicy="no-referrer"
+                  />
+               <Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
+            </Avatar>
+              
+            <Button size="sm" variant="tertiary" className="bg-pink-400 text-white hover:bg-pink-500" onClick={handleSignOut} >Signout</Button>
+
+          </div>
+
+        
+        
+      }
   </header>
 </nav>
         </div>
