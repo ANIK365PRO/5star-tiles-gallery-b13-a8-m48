@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 const Navbar = () =>{
     const { data: session , isPending } = authClient.useSession()
     const user = session?.user
-    console.log(user, isPending, 'nav session user')
+    // console.log(user, isPending, 'nav session user')
 
     const handleSignOut = async() =>{
       await authClient.signOut();

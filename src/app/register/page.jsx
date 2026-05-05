@@ -40,8 +40,8 @@ const RegisterPage = () => {
         }
 
 
-         console.log(data, error
-, 'data-error')
+         console.log(data, error, 'data-error')
+         
     };
 
 
