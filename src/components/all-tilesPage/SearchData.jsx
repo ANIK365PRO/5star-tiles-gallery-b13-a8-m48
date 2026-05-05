@@ -1,7 +1,7 @@
 import {Button, Input} from "@heroui/react";
 export function SearchData() {
   return (
-      <div className="flex justify-center items-center p-4 border rounded-lg bg-zinc-100/45 mx-auto w-[50%]">
+      <div className="flex justify-center items-center p-4 border rounded-lg bg-zinc-100/45 md:w-[50%]">
 
         <Input aria-label="Name" className=" rounded-none rounded-l-xl flex-1 w-full" placeholder=" search tiles by title " />
   
