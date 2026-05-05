@@ -1,17 +1,8 @@
 [
-  { "id": "tile_001", "category": "marble", "material": "Marble", "finish": "polished", "color": "black" },
-  { "id": "tile_002", "category": "marble", "material": "Marble", "finish": "honed", "color": "white" },
-  { "id": "tile_003", "category": "porcelain", "material": "Porcelain", "finish": "matte", "color": "grey" },
-  { "id": "tile_004", "category": "travertine", "material": "Travertine", "finish": "tumbled", "color": "beige" },
-  { "id": "tile_005", "category": "ceramic", "material": "Ceramic", "finish": "glossy", "color": "white" },
-  { "id": "tile_006", "category": "marble", "material": "Marble", "finish": "polished", "color": "green" },
-  { "id": "tile_007", "category": "porcelain", "material": "Porcelain", "finish": "matte", "color": "brown" },
-  { "id": "tile_008", "category": "mosaic", "material": "Glass", "finish": "glossy", "color": "blue" },
-  { "id": "tile_009", "category": "granite", "material": "Granite", "finish": "polished", "color": "black" },
-  { "id": "tile_010", "category": "ceramic", "material": "Clay", "finish": "matte", "color": "terracotta" },
-  { "id": "tile_011", "category": "marble", "material": "Marble", "finish": "polished", "color": "white" },
-  { "id": "tile_012", "category": "ceramic", "material": "Ceramic", "finish": "glossy", "color": "blue" },
-  { "id": "tile_013", "category": "porcelain", "material": "Porcelain", "finish": "matte", "color": "brown" },
-  { "id": "tile_014", "category": "marble", "material": "Marble", "finish": "polished", "color": "pink" },
-  { "id": "tile_015", "category": "porcelain", "material": "Porcelain", "finish": "matte", "color": "grey" }
+  { "id": "marble", "category": "marble" },
+  { "id": "porcelain", "category": "porcelain" },
+  { "id": "travertine", "category": "travertine" },
+  { "id": "ceramic", "category": "ceramic" },
+  { "id": "mosaic", "category": "mosaic" },
+  { "id": "granite", "category": "granite" }
 ]

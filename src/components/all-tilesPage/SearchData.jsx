@@ -1,27 +1,13 @@
-"use client";
-
-import {Button, Description, FieldError, Label, SearchField} from "@heroui/react";
-import React from "react";
-
+import {Button, Input} from "@heroui/react";
 export function SearchData() {
-  const [value, setValue] = React.useState("");
-  const isInvalid = value.length > 0 && value.length < 3;
-
   return (
-    <div className="flex flex-col gap-4">
-      <SearchField isRequired isInvalid={isInvalid} name="search" value={value} onChange={setValue}>
-        <Label>Search</Label>
-        <SearchField.Group>
-          <SearchField.SearchIcon />
-          <SearchField.Input className="w-[280px]" placeholder="Search..." />
-          <SearchField.ClearButton />
-        </SearchField.Group>
-        {isInvalid ? (
-          <FieldError>Search query must be at least 3 characters</FieldError>
-        ) : (
-          <Description>Enter at least 3 characters to search</Description>
-        )}
-      </SearchField>
-    </div>
-  );
+      <div className="flex justify-center items-center p-4 border rounded-lg bg-zinc-100/45 mx-auto w-[50%]">
+
+        <Input aria-label="Name" className=" rounded-none rounded-l-xl flex-1 w-full" placeholder=" search tiles by title " />
+  
+        <Button variant="outline" className="rounded-none rounded-r-xl bg-green-600 hover:bg-green-500 text-white ">search </Button>
+
+      </div>
+  
+  )
 }
