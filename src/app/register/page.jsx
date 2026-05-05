@@ -41,7 +41,7 @@ const RegisterPage = () => {
 
 
          console.log(data, error, 'data-error')
-         
+
     };
 
 
@@ -55,7 +55,7 @@ const RegisterPage = () => {
     
     return (
         <div className=" bg-zinc-100 py-10">
-              <div className="flex flex-col justify-center items-center py-10">
+              <div className="flex flex-col justify-center items-center gap-4 py-10">
 
                 <Form className="flex flex-col gap-4 card p-10 shadow-xl backdrop-blur-2xl bg-white/50 space-y-3" onSubmit={onSubmit}>
 

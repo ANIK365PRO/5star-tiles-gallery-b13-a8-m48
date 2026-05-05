@@ -25,7 +25,7 @@ export function UpdateProfileModal() {
   return (
     <Modal>
 
-      <Button variant="secondary"> <RiGhost2Line/> Update Feature</Button>
+      <Button variant="secondary" className="bg-green-600 hover:bg-green-500 font-bold text-white px-8"> <RiGhost2Line/> Update Feature</Button>
 
       <Modal.Backdrop>
         <Modal.Container placement="auto">
@@ -33,7 +33,7 @@ export function UpdateProfileModal() {
             <Modal.CloseTrigger />
             <Modal.Header>
               <Modal.Icon className="bg-accent-soft text-accent-soft-foreground">
-                <LuNotebookPen className="size-5"/>
+                <LuNotebookPen className="size-5 text-green-600 hover:text-green-500 font-bold"/>
                
               </Modal.Icon>
               <Modal.Heading>Update your profile</Modal.Heading>
@@ -52,10 +52,10 @@ export function UpdateProfileModal() {
                   </TextField>
                   
                     <Modal.Footer>
-                        <Button slot="close" variant="secondary">
+                        <Button slot="close" variant="secondary" className="text-green-600 hover:text-green-500 font-bold  px-8">
                             Cancel
                         </Button>
-                        <Button type="submit" slot="close">Save</Button>
+                        <Button type="submit" slot="close" className="bg-green-600 hover:bg-green-500 font-bold text-white px-8">Save</Button>
                     </Modal.Footer>
 
                 </form>
