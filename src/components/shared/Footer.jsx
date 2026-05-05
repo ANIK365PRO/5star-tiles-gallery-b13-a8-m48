@@ -8,7 +8,7 @@ const Footer = () => {
 
             <div><p className="font-bold text-3xl flex items-center gap-1">5 <FaStarOfDavid /> Tiles</p></div>
 
-            <div className=' flex-1 grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6 '>
+            <div className=' flex-1 grid grid-cols-2 md:grid-cols-3 md:gap-6 '>
                 <ul>
                     <li className='font-bold'>Feature</li>
                     <li>Home</li>
@@ -22,7 +22,7 @@ const Footer = () => {
                     <li className='font-bold'>Company</li>
                     <li> <a className="link link-hover">About us</a></li>
                     <li><a className="link link-hover">Contact</a></li>
-                    <li> <a className="link link-hover">Jobs</a></li>
+                    <li> <a className="link link-hover">Whatsapp</a></li>
                     <li> <a className="link link-hover">Press kit</a></li>
                    
                     
@@ -43,7 +43,7 @@ const Footer = () => {
             </div>
         </div>
                 <aside className='text-center py-10 border-t border-black/40'>
-            <p>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
+            <p>Copyright © {new Date().getFullYear()} - All right reserved by 5-Star-Tiles </p>
         </aside>
         </footer>
     );
