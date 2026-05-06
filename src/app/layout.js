@@ -19,7 +19,8 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${OutfitFont.className}  h-full antialiased`}
+      className={`${OutfitFont.className} light  h-full antialiased`}
+      data-theme="light"
     >
       <body className="min-h-full flex flex-col">
         
